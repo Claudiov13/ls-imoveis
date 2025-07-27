@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %}Imóveis – LS Imóveis{% endblock %}
+{% block content %}
+  <h2>Imóveis</h2>
+  <p><a class="btn" href="{% url 'core:imv_create' %}">➕ Novo Imóvel</a></p>
+  <ul>
+    {% for imv in imoveis %}
+      <li>
+        {{ imv.endereco }} — {{ imv.proprietario.nome }}
+        [<a href="{% url 'core:imv_edit' imv.pk %}">Editar</a> |
+         <a href="{% url 'core:imv_delete' imv.pk %}">Excluir</a>]
+      </li>
+    {% empty %}
+      <li>Sem imóveis cadastrados.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

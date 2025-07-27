@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}LS Imóveis{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>LS Imóveis</h1>
+    <nav>
+      <a href="{% url 'core:home' %}">Home</a> |
+      <a href="{% url 'core:prop_list' %}">Proprietários</a> |
+      <a href="{% url 'core:loc_list'  %}">Locatários</a> |
+      <a href="{% url 'core:imv_list'  %}">Imóveis</a>
+      {% if user.is_authenticated %}
+        |
+        <form action="{% url 'logout' %}" method="post" style="display:inline">
+          {% csrf_token %}
+          <button type="submit" style="background:none;border:none;color:inherit;cursor:pointer">
+            Sair
+          </button>
+        </form>
+      {% else %}
+        | <a href="{% url 'login' %}">Entrar</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    © 2025 LS Imóveis
+  </footer>
+</body>
+</html>
+
+

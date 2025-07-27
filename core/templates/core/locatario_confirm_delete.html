@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Excluir Locatário – LS Imóveis{% endblock %}
+{% block content %}
+  <h2>Excluir Locatário?</h2>
+  <p>Tem certeza que deseja excluir <strong>{{ object.nome }}</strong>?</p>
+  <form method="post">{% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'core:loc_list' %}">Não, voltar</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Excluir Imóvel – LS Imóveis{% endblock %}
+{% block content %}
+  <h2>Excluir Imóvel?</h2>
+  <p>Tem certeza que deseja excluir <strong>{{ object.endereco }}</strong>?</p>
+  <form method="post">{% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'core:imv_list' %}">Não, voltar</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Excluir Proprietário – LS Imóveis{% endblock %}
+{% block content %}
+  <h2>Excluir Proprietário?</h2>
+  <p>Tem certeza que deseja excluir <strong>{{ object.nome }}</strong>?</p>
+  <form method="post">{% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'core:prop_list' %}">Não, voltar</a>
+  </form>
+{% endblock %}

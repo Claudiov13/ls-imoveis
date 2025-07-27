@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %}Proprietários – LS Imóveis{% endblock %}
+{% block content %}
+  <h2>Proprietários</h2>
+  <p><a class="btn" href="{% url 'core:prop_create' %}">➕ Novo Proprietário</a></p>
+  <ul>
+    {% for p in props %}
+      <li>
+        {{ p.nome }} — {{ p.documento }}
+        [<a href="{% url 'core:prop_edit' p.pk %}">Editar</a> |
+         <a href="{% url 'core:prop_delete' p.pk %}">Excluir</a>]
+      </li>
+    {% empty %}
+      <li>Sem proprietários cadastrados.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,51 @@
+:root {
+  --terra-claro: #f4ede4;
+  --terra-medio: #c9b39a;
+  --terra-escuro: #8c6954;
+  --texto-principal: #333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: sans-serif;
+  background: var(--terra-claro);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  background: var(--terra-escuro);
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  display: inline;
+  margin-right: 20px;
+}
+
+header nav a {
+  color: var(--terra-claro);
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--terra-escuro);
+}

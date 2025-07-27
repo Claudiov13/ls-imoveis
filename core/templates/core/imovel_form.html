@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Formulário Imóvel – LS Imóveis{% endblock %}
+{% block content %}
+  <h2>{% if object %}Editar{% else %}Novo{% endif %} Imóvel</h2>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+  <p><a href="{% url 'core:imv_list' %}">← Voltar</a></p>
+{% endblock %}
